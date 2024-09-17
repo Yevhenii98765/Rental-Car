@@ -1,0 +1,19 @@
+.list_style {
+  border: 1px solid gray;
+}
+
+.btn_car {
+  border-radius: 12px;
+  padding: 12px 79px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 274px;
+  height: 44px;
+  background: #3470ff;
+}
+
+.wrap_info {
+  display: flex;
+  gap: 5px;
+}
