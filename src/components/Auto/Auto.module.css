@@ -1,5 +1,8 @@
 .list_style {
-  border: 1px solid gray;
+  background-color: #fff;
+  position: relative;
+  max-width: 274px;
+  max-height: 428px;
 }
 
 .btn_car {
@@ -11,9 +14,77 @@
   width: 274px;
   height: 44px;
   background: #3470ff;
+  color: #fff;
+}
+
+.auto_img {
+  border-radius: 10px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  height: 268px;
+  width: 418px;
 }
 
 .wrap_info {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 150%;
+  color: #121417;
   display: flex;
-  gap: 5px;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.iner_info {
+  display: flex;
+  gap: 2px;
+}
+
+.second_info {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: rgba(18, 20, 23, 0.5);
+  margin-bottom: 28px;
+}
+
+.second_info_wrap {
+  display: flex;
+  gap: 9px;
+}
+
+.second_info_wrap_wrap {
+  display: flex;
+  gap: 9px;
+}
+
+.text_first {
+  position: relative;
+}
+
+.text_first::after {
+  position: absolute;
+  content: '';
+  display: block;
+  height: 14px;
+  top: 3px;
+  background: gray;
+  width: 0.8px;
+  right: -4px;
+}
+
+.text_second {
+  color: #3470ff;
+}
+
+.icon_liked {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+}
+
+.icon_liked_second {
+  position: absolute;
+  top: 13px;
+  right: 13px;
 }

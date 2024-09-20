@@ -1,11 +1,29 @@
-import { createSlice, isAnyOf } from '@reduxjs/toolkit';
+import { createAction, createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { fetchDataThunk } from './operations';
 
 const initialState = {
   items: [],
   isLoading: false,
   isError: false,
+  isLiked: false,
 };
+
+export const toggleLike = createAction('toggleLike');
+function saveLike(id) {
+  let isLiked = JSON.parse(localStorage.getItem('isLiked')) || [];
+  if (!isLiked.includes(id)) {
+    isLiked.push(id);
+    localStorage.setItem('isLiked', JSON.stringify(isLiked));
+  }
+}
+
+function removeLike(id) {
+  let isLiked = JSON.parse(localStorage.getItem('isLiked')) || [];
+  if (isLiked.includes(id)) {
+    isLiked = isLiked.filter(item => item !== id);
+    localStorage.setItem('isLiked', JSON.stringify(isLiked));
+  }
+}
 
 const slice = createSlice({
   name: 'auto',
@@ -18,6 +36,17 @@ const slice = createSlice({
 
   extraReducers: builder => {
     builder
+      .addCase(toggleLike, (state, action) => {
+        const item = state.items.find(item => item.id === action.payload);
+        if (item) {
+          item.isLiked = !item.isLiked;
+          if (item.isLiked) {
+            saveLike(item.id);
+          } else {
+            removeLike(item.id);
+          }
+        }
+      })
       .addCase(fetchDataThunk.fulfilled, (state, action) => {
         state.items = action.payload;
       })

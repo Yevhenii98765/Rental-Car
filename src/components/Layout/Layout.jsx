@@ -1,14 +1,17 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
+import Container from '../Container/Container';
 
 export const Layout = () => {
   return (
     <div>
       <Navigation />
-      <Suspense>
-        <Outlet />
-      </Suspense>
+      <Container>
+        <Suspense>
+          <Outlet />
+        </Suspense>
+      </Container>
     </div>
   );
 };

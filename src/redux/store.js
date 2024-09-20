@@ -14,6 +14,7 @@ import storage from 'redux-persist/lib/storage';
 
 import { autoReducer } from './auto/slice';
 import { filterReducer } from './filters/slice';
+import { filtersLeaseReducer } from './leaseFilters/slice';
 
 const persistConfig = {
   key: 'auto',
@@ -26,6 +27,7 @@ export const store = configureStore({
   reducer: {
     auto: persistedReducer,
     filter: filterReducer,
+    filtersLease: filtersLeaseReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

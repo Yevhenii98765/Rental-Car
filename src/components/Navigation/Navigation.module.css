@@ -1,0 +1,13 @@
+.iner {
+  padding: 10px 15px;
+  background-color: #3470ff;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.wrap_second {
+  display: flex;
+  gap: 10px;
+}

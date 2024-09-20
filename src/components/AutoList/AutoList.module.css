@@ -1,5 +1,7 @@
 .list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 9px;
+  gap: 29px;
+  width: 274px;
+  height: 426px;
 }

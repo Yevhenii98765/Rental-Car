@@ -3,6 +3,7 @@ import { selectAuto } from '../../redux/auto/slice';
 import { selectFilter } from '../../redux/filters/slice';
 import Auto from '../Auto/Auto';
 import s from './AutoList.module.css';
+import Container from '../Container/Container';
 
 export const AutoList = () => {
   const items = useSelector(selectAuto);
@@ -14,11 +15,13 @@ export const AutoList = () => {
 
   return (
     <div>
-      <ul className={s.list}>
-        {filteredAuto.map(item => (
-          <Auto key={item.id} item={item} />
-        ))}
-      </ul>
+      <Container>
+        <ul className={s.list}>
+          {filteredAuto.map(item => (
+            <Auto key={item.id} item={item} />
+          ))}
+        </ul>
+      </Container>
     </div>
   );
 };
